@@ -22,6 +22,6 @@ We were given the following task:
 
 ## Authors
 
-** Wesley Spangler ** [InfiniteWes](https://github.com/InfiniteWes)
+** Wesley Spangler ** [InfiniteWes](https://github.com/InfiniteWes) \n
 ** Madison Wheeless **
 ** Tami Dada **
