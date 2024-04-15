@@ -12,6 +12,7 @@ public class job {
 
     }
 
+    // Setter methods for the various variables
     public void setJobID(int jobID) {
         this.jobID = jobID;
     }
@@ -28,6 +29,7 @@ public class job {
         this.requirements = requirements;
     }
 
+    // Getter methods for the various variables
     public int getJobID() {
         return jobID;
     }
