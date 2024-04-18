@@ -20,7 +20,7 @@ We were given the following task:
 ```
 
 ### UML Diagram:
-
+![Alternative Text](https://github.com/InfiniteWes/Job-Search-Project/blob/main/img/Job%20Search%20UML%20Diagram%20(1).png)
 
 ## Authors
 
