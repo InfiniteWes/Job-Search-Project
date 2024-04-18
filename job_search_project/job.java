@@ -1,48 +1,37 @@
 package job_search_project;
 
 public class job {
-    // Basic variables for Job
     protected int jobID;
     protected String jobTitle;
     protected String jobDescription;
     protected String[] requirements;
 
-    // Creating Constructor
-    public job() {
-
-    }
-
-    // Setter methods for the various variables
-    public void setJobID(int jobID) {
+    // Constructor that sets job details and initializes requirements based on the job title
+    public job(int jobID, String jobTitle, String jobDescription) {
         this.jobID = jobID;
-    }
-
-    public void setJobTitle(String jobTitle) {
         this.jobTitle = jobTitle;
-    }
-
-    public void setJobDescription(String jobDescription) {
         this.jobDescription = jobDescription;
+        setRequirementsByTitle(jobTitle);  // Set requirements based on the job title
     }
 
-    public void setRequirements(String[] requirements) {
-        this.requirements = requirements;
+    private void setRequirementsByTitle(String jobTitle) {
+        switch (jobTitle) {
+            case "Software Developer":
+                this.requirements = new String[]{"Java", "Git", "SQL"};
+                break;
+            case "Web Developer":
+                this.requirements = new String[]{"HTML", "CSS", "JavaScript"};
+                break;
+            case "Data Analyst":
+                this.requirements = new String[]{"Python", "Excel", "SQL"};
+                break;
+            default:
+                this.requirements = new String[]{"General Requirement"};
+                break;
+        }
     }
 
-    // Getter methods for the various variables
-    public int getJobID() {
-        return jobID;
-    }
-
-    public String getJobTitle() {
-        return jobTitle;
-    }
-
-    public String getJobDescription() {
-        return jobDescription;
-    }
-
-    public String[] getRequirements() {
-        return requirements;
+    public String displayJobDetails() {
+        return "Job ID: " + jobID + "\nTitle: " + jobTitle + "\nDescription: " + jobDescription + "\nRequirements: " + String.join(", ", requirements);
     }
 }
