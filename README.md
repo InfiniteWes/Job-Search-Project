@@ -19,6 +19,8 @@ We were given the following task:
 
 ```
 
+### UML Diagram:
+
 
 ## Authors
 
