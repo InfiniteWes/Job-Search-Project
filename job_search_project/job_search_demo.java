@@ -10,7 +10,10 @@ public class job_search_demo {
             new job(3, "Data Analyst", "Analyze data and generate insights.")
         };
 
-        System.out.println("Select a job by number (1, 2, or 3):");
+        System.out.println("Select a job by number:");
+        System.out.println("[1]  Software Developer");
+        System.out.println("[2]  Web Developer");
+        System.out.println("[3]  Data Analyst");
         int choice = scanner.nextInt();
         if (choice >= 1 && choice <= 3) {
             System.out.println("You selected:");
