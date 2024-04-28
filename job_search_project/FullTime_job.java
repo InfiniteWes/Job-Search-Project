@@ -1,6 +1,6 @@
 package job_search_project;
 
-public class FullTime_job extends job {
+public class FullTime_job extends job implements JobType {
     private double salary;
     private double retirementHelp;
     private double companyStocks;
@@ -14,12 +14,19 @@ public class FullTime_job extends job {
         this.signOnBonus = signOnBonus;
     }
 
+
     public void setBenefitsPackage() {
         this.retirementHelp = 0.25 * salary;
         this.companyStocks = 0.05 * salary;
         this.signOnBonus = 0.05 * salary;
     }
 
+    @Override
+    public double calculateWeeklyPay() {
+        return salary / 52;
+    }
+
+    @Override
     public String getBenefitsPackage() {
         return "Retirement Help: " + retirementHelp + "\nCompany Stocks: " + companyStocks + "\nSign On Bonus: " + signOnBonus;
     }

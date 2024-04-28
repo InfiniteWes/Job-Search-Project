@@ -1,6 +1,6 @@
 package job_search_project;
 
-public class job {
+public abstract class job {
     protected int jobID;
     protected String jobTitle;
     protected String jobDescription;
