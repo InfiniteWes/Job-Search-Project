@@ -4,22 +4,26 @@ import java.io.File;
 import java.io.IOException;
 import java.util.Scanner;
 
+// applicant_details.java
 public class applicant_details {
     private String name;
     private String email;
     private String phoneNumber;
-    private String resume; // Assuming this stores the path to the resume file
+    private String resume;
 
+    // Constructor
     public applicant_details(String name, String email, String phoneNumber) {
         this.name = name;
         this.email = email;
         this.phoneNumber = phoneNumber;
     }
 
+    // Method to get applicant information
     public String getApplicantInfo() {
         return "Applicant Name: " + name + "\nEmail: " + email + "\nPhone Number: " + phoneNumber;
     }
 
+    // Method to upload resume
     public void uploadResume(String resumePath) {
         this.resume = resumePath;
         try {
@@ -35,6 +39,7 @@ public class applicant_details {
         }
     }
 
+    // Method to read resume
     public String readResume() {
         if (this.resume == null) {
             return "No resume uploaded.";

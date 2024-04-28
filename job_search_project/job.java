@@ -1,5 +1,6 @@
 package job_search_project;
 
+// Creating abstract class "job"
 public abstract class job {
     protected int jobID;
     protected String jobTitle;
@@ -22,10 +23,12 @@ public abstract class job {
         setRequirementsByTitle(jobTitle);  // Set requirements based on the job title
     }
 
+    // Static method to get all jobs
     public static job[] getJobs() {
         return jobs;
     }
 
+    // Setter method to set requirements based on the job title
     private void setRequirementsByTitle(String jobTitle) {
         switch (jobTitle) {
             case "Software Developer":
@@ -51,9 +54,11 @@ public abstract class job {
         }
     }
 
+    // Method to display jobs
     public String displayJobs() {
         return "\nJob [" + jobID + "] - " + jobTitle;
     }
 
+    // Abstract method to display job details
     public abstract String displayJobDetails();
 }

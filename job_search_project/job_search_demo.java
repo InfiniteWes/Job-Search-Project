@@ -4,19 +4,27 @@ import java.util.Scanner;
 public class job_search_demo {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        job[] jobs = job.getJobs();  // Ensure Jobs.java contains all job definitions
-        JobTracker tracker = new JobTracker();  // Instance of JobTracker
 
+        // Initialize jobs and tracker
+        job[] jobs = job.getJobs();  
+        JobTracker tracker = new JobTracker();
+
+        // Prompt user for job search
         System.out.println("Are you looking for a job? (yes/no)");
         String response_original = scanner.nextLine();
+
+        // While loop while user is looking for a job, else is exits the Program.
         while (response_original.equalsIgnoreCase("yes")) {
             for (int i = 0; i < jobs.length; i++) {
                 System.out.println(jobs[i].displayJobs());
             }
+
+            // Prompt user to select a job
             System.out.println("Select a job by number:");
             int choice = scanner.nextInt();
-            scanner.nextLine();  // Consume newline left-over after nextInt()
+            scanner.nextLine();
 
+            // Check if user selected a valid job in the list
             if (choice >= 1 && choice <= jobs.length) {
                 job selectedJob = jobs[choice - 1];
                 System.out.println("You selected:\n" + selectedJob.displayJobDetails());
@@ -32,6 +40,7 @@ public class job_search_demo {
                     System.out.println(ptJob.calculateWeeklyPay());
                 }
 
+                // Prompt user to submit an application
                 System.out.println("\nWould you like to submit a job application to this job? (yes/no)");
                 String response = scanner.nextLine();
     
