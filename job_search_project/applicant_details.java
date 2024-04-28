@@ -17,7 +17,7 @@ public class applicant_details {
     }
 
     public String getApplicantInfo() {
-        return "Applicant Name: " + name + ", Email: " + email + ", Phone Number: " + phoneNumber;
+        return "Applicant Name: " + name + "\nEmail: " + email + "\nPhone Number: " + phoneNumber;
     }
 
     public void uploadResume(String resumePath) {

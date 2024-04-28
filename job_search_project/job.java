@@ -55,7 +55,5 @@ public abstract class job {
         return "\nJob [" + jobID + "] - " + jobTitle;
     }
 
-    public String displayJobDetails() {
-        return "Job ID: " + jobID + "\nTitle: " + jobTitle + "\nDescription: " + jobDescription + "\nRequirements: " + String.join(", ", requirements);
-    }
+    public abstract String displayJobDetails();
 }

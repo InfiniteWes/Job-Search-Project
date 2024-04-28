@@ -27,6 +27,11 @@ public class FullTime_job extends job implements JobType {
     }
 
     @Override
+    public String displayJobDetails() {
+        return "Job ID: " + jobID + "\nTitle: " + jobTitle + "\nSalary: $" + salary + "\nDescription: " + jobDescription + "\nRequirements: " + String.join(", ", requirements);
+    }
+
+    @Override
     public String getBenefitsPackage() {
         return "Retirement Help: " + retirementHelp + "\nCompany Stocks: " + companyStocks + "\nSign On Bonus: " + signOnBonus;
     }

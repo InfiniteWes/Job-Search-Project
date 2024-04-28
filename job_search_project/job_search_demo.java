@@ -5,6 +5,7 @@ public class job_search_demo {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         job[] jobs = job.getJobs();  // Ensure Jobs.java contains all job definitions
+        JobTracker tracker = new JobTracker();  // Instance of JobTracker
 
         System.out.println("Are you looking for a job? (yes/no)");
         String response_original = scanner.nextLine();
@@ -17,18 +18,18 @@ public class job_search_demo {
             scanner.nextLine();  // Consume newline left-over after nextInt()
 
             if (choice >= 1 && choice <= jobs.length) {
-                System.out.println("You selected:\n");
-                System.out.println(jobs[choice - 1].displayJobDetails());
-                
-                // Display additional details based on the job type
-                if (jobs[choice - 1] instanceof FullTime_job) {
-                    FullTime_job selectedJob = (FullTime_job) jobs[choice - 1];
+                job selectedJob = jobs[choice - 1];
+                System.out.println("You selected:\n" + selectedJob.displayJobDetails());
+
+                // Check job type and display details
+                if (selectedJob instanceof FullTime_job) {
+                    FullTime_job ftJob = (FullTime_job) selectedJob;
                     System.out.println("\nBenefits Package:");
-                    System.out.println(selectedJob.getBenefitsPackage());
-                } else if (jobs[choice - 1] instanceof PartTime_job) {
-                    PartTime_job selectedJob = (PartTime_job) jobs[choice - 1];
+                    System.out.println(ftJob.getBenefitsPackage());
+                } else if (selectedJob instanceof PartTime_job) {
+                    PartTime_job ptJob = (PartTime_job) selectedJob;
                     System.out.println("\nPart Time Job Details:");
-                    System.out.println(selectedJob.calculateWeeklyPay());
+                    System.out.println(ptJob.calculateWeeklyPay());
                 }
 
                 System.out.println("\nWould you like to submit a job application to this job? (yes/no)");
@@ -57,7 +58,7 @@ public class job_search_demo {
                     System.out.println("\nWould you like to submit your application? (yes/no)");
                     response = scanner.nextLine();
                     if (response.equalsIgnoreCase("yes")) {
-                        // Assuming applicant_details has methods to handle application submission
+                        tracker.submitApplication(selectedJob.jobTitle);  // Track application submission
                         System.out.println("Application submitted successfully.");
                         System.out.println(applicant.getApplicantInfo());
                     } else {
@@ -72,6 +73,9 @@ public class job_search_demo {
             System.out.println("Are you looking for a job? (yes/no)");
             response_original = scanner.nextLine();
         }
+
+        // Display total applications for each job at the end of the session
+        tracker.displayApplicationsCount();
         scanner.close();
     }
 }
