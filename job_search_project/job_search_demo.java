@@ -4,7 +4,7 @@ import java.util.Scanner;
 public class job_search_demo {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        job[] jobs = job.getJobs();
+        job[] jobs = job.getJobs();  // Ensure Jobs.java contains all job definitions
 
         System.out.println("Are you looking for a job? (yes/no)");
         String response_original = scanner.nextLine();
@@ -20,7 +20,7 @@ public class job_search_demo {
                 System.out.println("You selected:\n");
                 System.out.println(jobs[choice - 1].displayJobDetails());
                 
-                // Check if the selected job is part-time or full-time and display appropriate details
+                // Display additional details based on the job type
                 if (jobs[choice - 1] instanceof FullTime_job) {
                     FullTime_job selectedJob = (FullTime_job) jobs[choice - 1];
                     System.out.println("\nBenefits Package:");
@@ -36,18 +36,35 @@ public class job_search_demo {
     
                 if (response.equalsIgnoreCase("yes")) {
                     System.out.println("Please enter your name:");
-                    String name = scanner.nextLine();  // Read user input for name
+                    String name = scanner.nextLine();
     
                     System.out.println("\nPlease enter your email:");
-                    String email = scanner.nextLine();  // Read user input for email
+                    String email = scanner.nextLine();
     
                     System.out.println("\nPlease enter your phone number:");
-                    String phoneNumber = scanner.nextLine();  // Read user input for phone number
-    
-                    // The logic for handling application submission remains here
-                    System.out.println("Application submitted successfully.");
+                    String phoneNumber = scanner.nextLine();
+                    
+                    System.out.println("Please upload your resume (enter file path):");
+                    String resumePath = scanner.nextLine();
+
+                    applicant_details applicant = new applicant_details(name, email, phoneNumber);
+                    applicant.uploadResume(resumePath);
+
+                    // Read and display the resume content for verification
+                    String resumeContent = applicant.readResume();
+                    System.out.println("Resume Content:\n" + resumeContent);
+
+                    System.out.println("\nWould you like to submit your application? (yes/no)");
+                    response = scanner.nextLine();
+                    if (response.equalsIgnoreCase("yes")) {
+                        // Assuming applicant_details has methods to handle application submission
+                        System.out.println("Application submitted successfully.");
+                        System.out.println(applicant.getApplicantInfo());
+                    } else {
+                        System.out.println("Application not submitted.");
+                    }
                 } else {
-                    System.out.println("Application not submitted.");
+                    System.out.println("No application submitted.");
                 }
             } else {
                 System.out.println("Invalid job number.");

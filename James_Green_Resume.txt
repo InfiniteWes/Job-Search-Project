@@ -1,0 +1,26 @@
+
+James Green
+Email: james.green@example.com
+Phone: (555) 123-4567
+
+Objective:
+  Motivated and detail-oriented Computer Science graduate seeking a position as a Software Developer to leverage
+  coding and problem-solving skills to deliver high-quality solutions for complex engineering challenges.
+
+Education:
+  Bachelor of Science in Computer Science
+  University Name, Graduated 2022
+
+Experience:
+  Internship, Tech Solutions Inc., May 2021 - August 2021
+    - Developed features for internal tools using Java and Python.
+    - Collaborated with a team of developers to improve software efficiency and reliability.
+  
+  Internship, Innovative Web Solutions, June 2020 - August 2020
+    - Assisted in the development and maintenance of client websites.
+    - Gained experience with HTML, CSS, JavaScript, and responsive design techniques.
+
+Skills:
+  - Programming Languages: Java, Python, HTML, CSS, JavaScript
+  - Tools and Technologies: Git, SQL, Visual Studio Code
+  - Strong analytical skills and a keen attention to detail
