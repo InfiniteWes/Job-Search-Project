@@ -19,6 +19,12 @@ We were given the following task:
 
 ```
 
+### Use:
+Running through the Program in a terminal, it will ask you if you are looking for a job.
+This will display various jobs for the user to select from, where this will be prompted
+to enter the file path to their resume. Upon doing so, it will display ther resume contents.
+After this, the user can then enter more information to submit an application for the Job.
+
 ### UML Diagram:
 ![Alternative Text](https://github.com/InfiniteWes/Job-Search-Project/blob/main/img/Job%20Search%20UML%20Diagram%20(1).png)
 
