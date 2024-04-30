@@ -25,6 +25,16 @@ This will display various jobs for the user to select from, where this will be p
 to enter the file path to their resume. Upon doing so, it will display ther resume contents.
 After this, the user can then enter more information to submit an application for the Job.
 
+### IDE used:
+Visual Studio Code
+
+### Java Version
+openjdk 21.0.3 2024-04-16 LTS
+JRESE-17
+
+### Operating System
+Windows 11
+
 ### UML Diagram:
 ![Alternative Text](https://github.com/InfiniteWes/Job-Search-Project/blob/main/img/Job%20Search%20UML%20Diagram%20(1).png)
 
